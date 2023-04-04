@@ -26,7 +26,7 @@ export default function MovieList() {
                 {moviesJson.map((movie,index) => (
                     <div>
                        
-                        <MovieCard index={index} data={movie} />
+                        <MovieCard key = {index.toString()} index={index} data={movie} />
                     </div>
                 ))}
             </div>
