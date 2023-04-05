@@ -24,9 +24,8 @@ export default function MovieList() {
             </div>
             <div className="grid grid-cols-4 gap-2">
                 {moviesJson.map((movie,index) => (
-                    <div>
-                       
-                        <MovieCard key = {index.toString()} index={index} data={movie} />
+                    <div key={movie.title}>
+                        <MovieCard key={movie.title} index={index} data={movie} />
                     </div>
                 ))}
             </div>
