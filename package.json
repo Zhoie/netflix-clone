@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "test:security": "node --test scripts/test-braces-security.mjs",
+    "prebuild": "node --test scripts/test-braces-security.mjs"
   },
   "dependencies": {
     "@next-auth/prisma-adapter": "^1.0.5",
@@ -15,8 +17,8 @@
     "@types/react": "19.2.18",
     "@types/react-dom": "19.2.4",
     "eslint": "9.39.2",
-    "eslint-config-next": "16.3.0",
-    "next": "16.3.0",
+    "eslint-config-next": "16.4.2",
+    "next": "16.4.2",
     "next-auth": "^4.24.15",
     "react": "19.2.8",
     "react-dom": "19.2.8",
@@ -25,13 +27,18 @@
   },
   "devDependencies": {
     "autoprefixer": "^10.4.14",
-    "postcss": "^8.4.21",
+    "postcss": "8.5.31",
     "prettier": "^2.8.7",
     "prettier-plugin-tailwindcss": "^0.2.6",
     "prisma": "^4.12.0",
-    "tailwindcss": "^3.3.1"
+    "tailwindcss": "^3.3.1",
+    "braces": "file:./vendor/braces-security/braces-security.tgz"
   },
   "engines": {
     "node": ">=22.23.4 <23"
+  },
+  "overrides": {
+    "postcss-selector-parser": "7.1.7",
+    "braces": "$braces"
   }
 }
